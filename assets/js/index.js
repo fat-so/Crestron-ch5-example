@@ -1,10 +1,16 @@
-import * as CrCombLib from "@crestron/ch5-crcomlib";
-import { data } from "jquery";
+import * as  CrComLib from "@crestron/ch5-crcomlib/build_bundles/cjs/cr-com-lib.js";
+
+window.bridgeReceiveIntegerFromNative=CrComLib.bridgeReceiveIntegerFromNative;
+window.bridgeReceiveBooleanFromNative=CrComLib.bridgeReceiveBooleanFromNative;
+window.bridgeReceiveStringFromNative=CrComLib.bridgeReceiveStringFromNative;
+window.bridgeReceiveObjectFromNative=CrComLib.bridgeReceiveObjectFromNative;
+
+//import { data } from "jquery";
 var $ = require('jquery')
 document.getElementById('test_button').addEventListener('click',test1);
 
 
-//const test = CrCombLib.subscribeState('s','index.OutLet_1_energy',(value) =>{
+//const test = CrComLib.subscribeState('s','index.OutLet_1_energy',(value) =>{
     //subscribeState get sned value
     //$('#AQI').text(value);
 //});
@@ -16,7 +22,7 @@ setInterval(function(){
 $('.date .week').text();
 function GetTime(){
     //時間更新
-    //var value = CrCombLib.getState('s','index.OutLet_1_energy');
+    //var value = CrComLib.getState('s','index.OutLet_1_energy');
     //$('#AQI').text(value);
     var num = Date.now();
     var dd = new Date(num);
@@ -67,20 +73,17 @@ function test1(){
     var s4=0;
     var s5=0;
     var s6=0;
-    CrCombLib.publishEvent('n','index.test1',5);
-    var s1=CrCombLib.getState('n','index.test1_fb',0)
-    var s2=CrCombLib.getNumericSignalValue('index.1',0)
-    var s3=CrCombLib.getNumericSignalValue('1',0)
-    var s4=CrCombLib.getNumericSignalValue('test1_fb',0)
-    var s5=CrCombLib.getNumericSignalValue('index.test1_fb',0)
-    var s6=CrCombLib.getNumericSignalValue('index.test1',0)
-    //CrCombLib.subscribeState('s','index.test1_fb',function (getValue){ $('#AQI').text(getValue);} );
+    CrComLib.publishEvent('n','index.test1',5);
+    var s1=CrComLib.getState('n','index.test1_fb',0)
+    var s2=CrComLib.getState('s','1',0)
+    
+    //CrComLib.subscribeState('s','index.test1_fb',function (getValue){ $('#AQI').text(getValue);} );
     $('#s1').text(s1);
     $('#s2').text(s2);
     $('#s3').text(s3);
     $('#s4').text(s4);
-    $('#s5').text(s5);
-    $('#s6').text(s6);
+   // $('#s5').text(s5);
+    //$('#s6').text(s6);
     //$('#AQI').text(getValue);
 }
 
