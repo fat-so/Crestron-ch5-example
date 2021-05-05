@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch5 Exampe</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <template id="Brtech_sys.index.index">
+        <div id="index.index">
+             <ch5-textinput sendEventOnChange="index.OutLet_1_energy_FB" receiveStateValue="index.OutLet_1_energy"> </ch5-textinput>
+                 <ch5-slider sendEventOnChange="index.test1" receiveStateValue="index.test1_fb">
+                </ch5-slider>
+         </div>
+    </template>
+    <div class="view">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="row">
+                    <!--左列-->
+                    <div class="col">
+                        <div class="widgit LT AQI">
+                        <!--Air Quality-->
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="icon">
+                                    <div class="top"><img src="assets/img/pm25.png" alt=""></div>
+                                    <div class="bottom">Air Quality Index</div>
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="info">
+                                    <div id='AQI'>
+                                        <div class="good">
+        
+                                        </div>
+                                        <div class="Moderate">
+        
+                                        </div>
+                                        <div class="UFSG">
+                                            <!--Unhealthy for Sensitive Groups-->
+        
+                                        </div>
+                                        <div class="Unhealthy">
+        
+                                        </div>
+                                        <div class="TooUnhealthy">
+        
+                                        </div>
+                                        <div class="Hazardous">
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="widgit LC">
+                            <div class="row date">
+                                <div class="col-7">
+                                    <!--date and time-->
+                                    <h1> <div class="hour"></div> : <div class="min"></div></h1>
+                                    <h5><div class="dates"></div> <div class="week"></div></h5>
+                                </div>
+                                <div class="col-5 weather">
+                                    <!--weather-->
+                                    <b>
+                                        Today's weather
+                                    </b>
+                                    <div>
+                                        37°/20°
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widgit LB">
+                            <button id='test_button'>
+                                點擊測試
+                            </button>
+                            <input receiveStateValue="index.OutLet_1_energy" type="text">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!--左列-->
+                        <div class="widgit RT" >
+                            <div id='s1'></div>
+                            <div id='s2'></div>
+                            <div id='s3'></div>
+                            <div id='s4'></div>
+                            <div id='s5'></div>
+                            <div id='s6'></div>
+                        </div>
+                        <div class="widgit RC">
+                            <div class="top">
+                                <div class="row">
+                                    <div class="col" style="border-right: 1px solid rgba(255, 255, 255, 0.2);"></div>
+                                    <div class="col"></div>
+                                </div>
+                            </div>
+                            <div class="bottom">
+        
+                            </div>
+                        </div>
+                        <div class="widgit RB">
+                            <div class="row">
+                                <div class="col" style="padding-left: 18px;">
+                                    <div class="item">
+                                        <div class="top">
+                                            <img src="assets/img/Roomtemperature.png" alt="">
+                                        </div>
+                                        <div class="bottom">
+                                            23°
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="item">
+                                        <div class="top">
+                                            <img src="assets/img/Humidity.png" alt="">
+                                        </div>
+                                        <div class="bottom">
+                                            78<small>%</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="item">
+                                        <div class="top">
+                                            <img src="assets/img/Airquality.png" alt="">
+                                        </div>
+                                        <div class="bottom">
+                                            200
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="item">
+                                        <div class="top">
+                                            <img src="assets/img/Energyused.png" alt="">
+                                        </div>
+                                        <div class="bottom">
+                                            52<small>w</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="item">
+                                        <div class="top">
+                                            <img src="assets/img/Securityguard.png" alt="">
+                                        </div>
+                                        <div class="bottom" style="font-family: Arial, Helvetica, sans-serif; font-size: 20px;">
+                                           NORMAL
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!--選單位置-->
+                </div>
+                
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+        </div>
+       
+    </div>
+    
+</body>
+<script src="/assets/js/index.js"></script>
+</html>

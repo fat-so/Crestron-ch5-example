@@ -1,0 +1,23 @@
+{
+  "name": "notsure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url .",
+    "build:archive": "ch5-cli archive -p example -d dist -o tsw -c C:/tools/crestrinCh5/output/Brtech_sys/interface/mapping/Brtech_sys.cse2j",
+    "deploy": "ch5-cli deploy -H 192.168.10.184  -t touchscreen tsw/example.ch5z "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@crestron/ch5-crcomlib": "^1.1.0",
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",
+    "node-jq": "^1.12.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
