@@ -1,26 +1,37 @@
 import * as  CrComLib from "@crestron/ch5-crcomlib/build_bundles/cjs/cr-com-lib.js";
 
+//necessary function
 window.bridgeReceiveIntegerFromNative=CrComLib.bridgeReceiveIntegerFromNative;
 window.bridgeReceiveBooleanFromNative=CrComLib.bridgeReceiveBooleanFromNative;
 window.bridgeReceiveStringFromNative=CrComLib.bridgeReceiveStringFromNative;
 window.bridgeReceiveObjectFromNative=CrComLib.bridgeReceiveObjectFromNative;
+//necessary function after import CrComLib
 
-//import { data } from "jquery";
-var $ = require('jquery')
+var $ = require('jquery')//import jquery
+
+
+const test = CrComLib.subscribeState('s','index.OutLet_1_energy',(value) =>{
+    //n->analog(number)||s->serial(string)||b->digital(boolean)
+    //subscribeState get signal
+    $('#AQI').text(value);
+});
+
+
+
 document.getElementById('test_button').addEventListener('click',test1);
-
-
-//const test = CrComLib.subscribeState('s','index.OutLet_1_energy',(value) =>{
-    //subscribeState get sned value
-    //$('#AQI').text(value);
-//});
 getWeatherInfo();
+
 GetTime();
 setInterval(function(){
     GetTime();
 },1000);
 $('.date .week').text();
+
+
+
+
 function GetTime(){
+    //reflesh js display time
     //時間更新
     //var value = CrComLib.getState('s','index.OutLet_1_energy');
     //$('#AQI').text(value);
@@ -46,7 +57,7 @@ function getEnegryInfo(){
 
 }
 function getWeatherInfo(){
-    //AQI
+    //get Central Weather Bureau Weather API info
     var API="https://data.epa.gov.tw/api/v1/aqx_p_432?limit=1000&api_key=9be7b239-557b-4c10-9775-78cadfc555e9&format=json"
     $.getJSON({
         url : API,
@@ -76,7 +87,9 @@ function test1(){
     CrComLib.publishEvent('n','index.test1',5);
     var s1=CrComLib.getState('n','index.test1_fb',0)
     var s2=CrComLib.getState('s','1',0)
-    
+    var s3=CrComLib.getStringSignalValue('1');
+    var s4=CrComLib.getNumericSignalValue('index.test1_fb',0)
+    var s4=CrComLib.getBooleanSignalValue('1',0)
     //CrComLib.subscribeState('s','index.test1_fb',function (getValue){ $('#AQI').text(getValue);} );
     $('#s1').text(s1);
     $('#s2').text(s2);
