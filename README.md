@@ -14,16 +14,23 @@ add necessary function after import ch5
 
     CrComLib.publishEvent('n','index.test1',5);
     
-n->number(analog)|s->string(serial)|b->boolean(digital) </br>
-'index.test1'->is bulid by "ch5 contract edit" you can just use joinnumber </br>
-5->the digital u send , serial use "5" , digital use true/false</br></br></br>
+
+first  parameter : tell crestron data type n->number(analog)|s->string(serial)|b->boolean(digital) </br>
+second parameter : 'index.test1'->is bulid by "ch5 contract edit" you can just use joinnumber </br>
+third  parameter : the data u send ,analog use number , serial use "string" , digital use true/false </br></br>
+BTW</br>
+I not sure is has bug or not by use joinNumber , because crestron give us the "ch5 contract edit" ,</br>
+I'm not sure is crestron enginner think "hay we can make ch5 like smart object" or "hay joinNumber has some bug on ch5" </br>
+so use joinNumber be careful </br></br></br>
 
 # ch5-test-example:receive data when signal change
 
     const test = CrComLib.subscribeState('s','index.OutLet_1_energy',(value) =>{
         $('#AQI').text(value);
     });
-    
+first  parameter : return data type </br>
+second parameter : JoinNumber or JoinName </br>
+third  parameter : Function(ReturnValue){} </br>
 </br></br></br>
 # ch5-test-example:receive data when you call - 1
 
@@ -37,10 +44,12 @@ the third parameter is default number
     var s4=CrComLib.getNumericSignalValue('index.test1_fb',0)
     var s4=CrComLib.getBooleanSignalValue('1',0)
 
-the 2nd parameter is default number 
-</br></br></br>
+U can just call back Serial or digital or analog Join ,</br>
+I'm not sure why has those function , maybe it could make code more "readable" 😂?</br>
+first  parameter : JoinName Or JoinNumber</br>
+second parameter : default return number when is empty or not avarible </br></br></br>
 
-# if you are first time use ch5 refer this :
+# if you are first time use ch5 refer this is would be helpful:
 
 GitHub</br>
 https://github.com/CloudDrivenSolutions/CH5-Basic?fbclid=IwAR065A9K6H8gbog4DTdKM_LMej40YJKstLgpHxIh_l_glSiJe3b_ZeNCNv0
