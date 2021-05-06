@@ -29,9 +29,8 @@ n->number(analog)|s->string(serial)|b->boolean(digital) </br>
 
     var s1=CrComLib.getState('n','index.test1_fb',0)
     
-</br></br></br>
 the third parameter is default number 
-    
+</br></br></br>
 # ch5-test-example:receive data when you call - 2
 
     var s3=CrComLib.getStringSignalValue('1');
