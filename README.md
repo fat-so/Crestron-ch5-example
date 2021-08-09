@@ -1,4 +1,4 @@
-# ch5-test-example:pre-Process
+# Crestron ch5 example
 add necessary function after import ch5
 
     import * as  CrComLib from "@crestron/ch5-crcomlib/build_bundles/cjs/cr-com-lib.js";
